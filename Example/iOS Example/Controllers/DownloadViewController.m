@@ -7,8 +7,11 @@
 //
 
 #import "DownloadViewController.h"
+#import "DownloadTableViewCell.h"
 
-@interface DownloadViewController ()
+@interface DownloadViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) UITableView *tableView;
 
 @end
 
@@ -17,11 +20,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"DownloadTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+//    cell.textLabel.text = title;
+    
+    return cell;
 }
 
 /*
@@ -33,5 +54,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
