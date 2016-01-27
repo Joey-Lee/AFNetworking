@@ -25,8 +25,10 @@
 #import "Post.h"
 
 #import "PostTableViewCell.h"
+#import "MoreExamples.h"
 
 @import AFNetworking;
+
 
 @interface GlobalTimelineViewController ()
 @property (readwrite, nonatomic, strong) NSArray *posts;
@@ -59,6 +61,9 @@
     [self.tableView.tableHeaderView addSubview:self.refreshControl];
 
     self.tableView.rowHeight = 70.0f;
+    UIBarButtonItem *rightBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(moreDemo:)];
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.leftBarButtonItem = rightBtnItem;
     
     [self reload:nil];
 }
@@ -98,6 +103,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)moreDemo:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MoreExamples *moreExamples = [storyboard instantiateViewControllerWithIdentifier:@"moreExamples"];
+    [self.navigationController pushViewController:moreExamples animated:YES];
 }
 
 @end
