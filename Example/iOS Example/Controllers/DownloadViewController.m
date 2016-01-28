@@ -8,8 +8,11 @@
 
 #import "DownloadViewController.h"
 #import "DownloadTableViewCell.h"
+#import "EntryModel.h"
 
-@interface DownloadViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface DownloadViewController () <UITableViewDataSource, UITableViewDelegate> {
+    NSArray *_downloadArray;
+}
 
 @property (nonatomic, weak) UITableView *tableView;
 
@@ -22,6 +25,19 @@
     // Do any additional setup after loading the view.
     
     [self.tableView registerNib:[UINib nibWithNibName:@"DownloadTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    
+}
+
+- (void)loadData {
+    EntryModel *model1 = [EntryModel new];
+    model1.title = @"Xcode 4.6.3";
+    model1.urlStr = @"https://developer.apple.com/devcenter/download.action?path=/Developer_Tools/xcode_4.6.3/xcode4630916281a.dmg";
+    
+    EntryModel *model2 = [EntryModel new];
+    model2.title = @"Xcode 5.1.1";
+    model2.urlStr = @"https://developer.apple.com/devcenter/download.action?path=/Developer_Tools/xcode_5.1.1/xcode_5.1.1.dmg";
+    
+    _downloadArray = [[NSArray alloc] initWithObjects:model1, model2, nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,11 +52,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DownloadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[DownloadTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-//    cell.textLabel.text = title;
+    cell.model = _downloadArray[indexPath.row];
     
     return cell;
 }

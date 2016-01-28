@@ -23,7 +23,6 @@
 		291BFE1F1BB9ECEE00FFB029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291BFE1E1BB9ECEE00FFB029 /* Assets.xcassets */; };
 		291BFE351BB9ED7F00FFB029 /* Gravatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291BFE341BB9ED7F00FFB029 /* Gravatar.swift */; };
 		291BFE371BB9EDD700FFB029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291BFE361BB9EDD700FFB029 /* UIKit.framework */; };
-		293206F41BD14AB50019EB9E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293206F31BD14AB50019EB9E /* AFNetworking.framework */; };
 		293206F51BD14AF50019EB9E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293206F31BD14AB50019EB9E /* AFNetworking.framework */; };
 		293206F61BD14B480019EB9E /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E6F19F1BB9DD7300A4466C /* AFAppDotNetAPIClient.m */; };
 		293206F71BD14B5C0019EB9E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293206F31BD14AB50019EB9E /* AFNetworking.framework */; };
@@ -52,6 +51,7 @@
 		C48ED9BF1C58D13C00A6E062 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48ED9BE1C58D13C00A6E062 /* UploadViewController.m */; };
 		C48ED9C21C58D15200A6E062 /* GetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48ED9C11C58D15200A6E062 /* GetViewController.m */; };
 		C48ED9C51C58D15E00A6E062 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48ED9C41C58D15E00A6E062 /* PostViewController.m */; };
+		C4AA557F1C5A129400299736 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4AA557E1C5A129400299736 /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +182,7 @@
 		C48ED9C11C58D15200A6E062 /* GetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetViewController.m; sourceTree = "<group>"; };
 		C48ED9C31C58D15E00A6E062 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		C48ED9C41C58D15E00A6E062 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		C4AA557E1C5A129400299736 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293206F41BD14AB50019EB9E /* AFNetworking.framework in Frameworks */,
+				C4AA557F1C5A129400299736 /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +385,7 @@
 		29E6F1E71BB9E37200A4466C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4AA557E1C5A129400299736 /* AFNetworking.framework */,
 				293206F31BD14AB50019EB9E /* AFNetworking.framework */,
 				291BFE361BB9EDD700FFB029 /* UIKit.framework */,
 				29E6F1E81BB9E37200A4466C /* NotificationCenter.framework */,

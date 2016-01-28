@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EntryModel.h"
 #import "DownloadViewController.h"
+@import AFNetworking;
 
 @interface DownloadTableViewCell : UITableViewCell
 
